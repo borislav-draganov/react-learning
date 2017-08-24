@@ -9,8 +9,10 @@ module.exports = {
     resolve: {
         extensions: ['.webpack.js', '.js', '.jsx', '.css', '.html']
     },
-    devServer: {
-        historyApiFallback: true,
+    node: {
+        fs: 'empty',
+        net: 'empty',
+        tls: 'empty'
     },
     module: {
         loaders: [
