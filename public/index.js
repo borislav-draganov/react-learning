@@ -8,7 +8,6 @@ ReactDOM.render(
         <Switch>
             <Route exact path="/" component={App}/>
             <Route path="/:count" component={App}/>
-            <Route path="/count/:count" component={App}/>
         </Switch>
     </BrowserRouter>,
 document.getElementById('root'));
