@@ -1,9 +1,10 @@
 import React from "react";
 import request from "request-promise-native";
+import Note from "./Note";
 
 export default class Notes extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {
             notes: []
@@ -21,11 +22,8 @@ export default class Notes extends React.Component {
     render() {
         return (
             <div>
-                { this.state.notes.map((note) =>
-                    <div key={note.id}>
-                        <span>ID:</span> {note.id} <br />
-                        <span>Note:</span> {note.text}
-                    </div>
+                { this.state.notes.map((note, i) =>
+                    <Note data={note} key={i}/>
                 )}
             </div>
         )

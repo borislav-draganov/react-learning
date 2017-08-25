@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 export default class App extends Component {
     constructor(props) {
-        super();
+        super(props);
         this.count = props.match.params.count || 1;
 
         console.log('Count: ', this.count);
