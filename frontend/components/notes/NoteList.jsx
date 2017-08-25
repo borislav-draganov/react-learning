@@ -3,8 +3,7 @@ import Note from "./Note";
 
 export default class Notes extends React.Component {
     componentDidMount() {
-        const { dispatch } = this.props;
-        dispatch(this.props.getData());
+        this.props.getData();
     }
 
     render() {

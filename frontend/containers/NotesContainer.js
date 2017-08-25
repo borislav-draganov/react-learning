@@ -8,8 +8,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    getData,
-    dispatch
+    getData: () => dispatch(getData())
 });
 
 export default connect(
