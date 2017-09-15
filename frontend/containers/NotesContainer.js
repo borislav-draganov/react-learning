@@ -1,6 +1,6 @@
 import {connect} from "react-redux";
 import NoteList from "../components/notes/NoteList";
-import {getData} from "../actions/index";
+import {getNotes} from "../actions/index";
 import * as React from "react";
 
 const mapStateToProps = (state) => ({
@@ -8,7 +8,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    getData: () => dispatch(getData())
+    getNotes: () => dispatch(getNotes())
 });
 
 export default connect(
