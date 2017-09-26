@@ -8,11 +8,9 @@ export default class Notes extends React.Component {
 
     render() {
         return (
-            <div>
-                { this.props.notes.map((note, i) =>
-                    <Note data={note} key={i}/>
-                )}
-            </div>
+            this.props.notes.map((note, i) =>
+                <Note data={note} key={i}/>
+            )
         )
     }
 }

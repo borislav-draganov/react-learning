@@ -17,10 +17,6 @@ export default class App extends Component {
                 </div>);
         }
 
-        return (
-            <div>
-                {msgs}
-            </div>
-        )
+        return msgs
     }
 }
