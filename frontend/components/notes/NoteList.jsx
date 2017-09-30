@@ -2,10 +2,6 @@ import React from "react";
 import Note from "./Note";
 
 export default class Notes extends React.Component {
-    componentDidMount() {
-        this.props.getNotes();
-    }
-
     render() {
         return (
             this.props.notes.map((note, i) =>
