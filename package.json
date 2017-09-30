@@ -2,10 +2,11 @@
   "name": "react-intro",
   "version": "1.0.0",
   "description": "testing react",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "webpack-watch": "webpack -w",
+    "start:debug": "node --inspect server.js",
+    "webpack:watch": "webpack -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Borislav Draganov",

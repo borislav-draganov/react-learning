@@ -1,23 +1,25 @@
 let express = require('express');
 let app = express();
+let notes = require('./data/notes');
 
 let port = 8080;
 
 app.use(express.static('public'));
 
 app.get('/api/notes', (req, res) => {
-    let notes = [
-        {
-            id: 1,
-            text: 'First note'
-        },
-        {
-            id: 2,
-            text: 'Second note'
-        }
-    ];
-
     res.json(notes);
+});
+
+app.get('/api/notes/:id', (req, res) => {
+    let note = notes.find((it) => it.id === parseInt(req.params.id));
+
+    if (note) {
+        res.json(note);
+    } else {
+        res.status(404).json({
+            error: "Note ID not found"
+        })
+    }
 });
 
 app.use((req, res) => {
