@@ -1,11 +1,19 @@
-import * as request from "request-promise-native";
+import * as NotesApi from "../api/notesApi";
+import {Note} from "../models/index";
 
-export const getNotes = () => (dispatch) => request('http://localhost:8080/api/notes').then((data) => {
-    let notes = JSON.parse(data);
-    dispatch(receivedData(notes))
+export const requestedData = () => ({
+    type: 'NOTES_REQUESTED_DATA'
 });
 
-export const receivedData = (notes) => ({
+export const receivedData = (notes: Note[]) => ({
     type: 'NOTES_RECEIVED_DATA',
     notes
 });
+
+export const getAllNotes = () => (dispatch) => {
+    dispatch(requestedData());
+
+    NotesApi.getNotes.then((notes: Note[]) => {
+        dispatch(receivedData(notes))
+    })
+};
