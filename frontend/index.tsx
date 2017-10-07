@@ -1,20 +1,20 @@
-import React from 'react';
-import ReactDOM from "react-dom";
+import * as React from 'react';
+import * as ReactDOM from "react-dom";
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
-import Dormammu from "./components/Dormammu";
 import Provider from "react-redux/es/components/Provider";
+import {Dormammu} from "./components/Dormammu";
 import {applyMiddleware, createStore} from "redux";
-import reducer from './reducers'
-import NotesListContainer from "./containers/NotesListContainer";
+import NoteListContainer from "./containers/NotesListContainer";
 import thunk from "redux-thunk";
+import {reducers} from "./reducers/index";
 
-const store = createStore(reducer, applyMiddleware(thunk));
+const store = createStore(reducers, applyMiddleware(thunk));
 
 ReactDOM.render(
     <Provider store={store}>
         <BrowserRouter>
             <Switch>
-                <Route exact path="/" component={NotesListContainer}/>
+                <Route exact path="/" component={NoteListContainer}/>
 
                 <Route exact path="/dormammu" component={Dormammu}/>
                 <Route path="/dormammu/:count" component={Dormammu}/>

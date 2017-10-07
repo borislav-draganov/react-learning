@@ -1,12 +1,12 @@
 import * as React from "react";
-import NoteItem from "./Note";
 import {Note} from "../../models/index";
+import {NoteItem} from "./Note";
 
 interface NotesListProps {
     notes: Note[]
 }
 
-export default class NoteList extends React.Component<NotesListProps, {}> {
+export class NoteList extends React.Component<NotesListProps, {}> {
     render() {
         return (
             this.props.notes.map((note, i) =>

@@ -1,6 +1,13 @@
-import React, {Component} from 'react';
+import * as React from 'react';
+import {RouterProps} from "react-router";
 
-export default class App extends Component {
+interface DormammuProps {
+    match: RouterProps
+}
+
+export class Dormammu extends React.Component<DormammuProps, {}> {
+    private count: number;
+
     constructor(props) {
         super(props);
         this.count = props.match.params.count || 1;

@@ -13,11 +13,17 @@
   "license": "MIT",
   "repository": "git@github.com:borislav-draganov/react-learning.git",
   "dependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
-    "express": "^4.15.5",
+    "express": "^4.16.1"
+  },
+  "devDependencies": {
+    "@types/node": "^8.0.33",
+    "@types/react": "^16.0.10",
+    "@types/react-dom": "^16.0.1",
+    "@types/react-router-dom": "^4.0.8",
+    "@types/redux": "^3.6.31",
+    "@types/redux-thunk": "^2.1.32",
+    "@types/request": "^2.0.4",
+    "@types/request-promise-native": "^1.0.7",
     "path": "^0.12.7",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
@@ -25,21 +31,11 @@
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
-    "request": "^2.82.0",
+    "request": "^2.83.0",
     "request-promise-native": "^1.0.5",
-    "tunnel-agent": "^0.6.0",
-    "webpack": "^3.6.0"
-  },
-  "devDependencies": {
-    "@types/node": "^8.0.32",
-    "@types/react": "^16.0.10",
-    "@types/react-dom": "^16.0.0",
-    "@types/react-router-dom": "^4.0.8",
-    "@types/redux": "^3.6.0",
-    "@types/redux-thunk": "^2.1.0",
-    "@types/request": "^2.0.4",
-    "@types/request-promise-native": "^1.0.7",
     "ts-loader": "^2.3.7",
-    "typescript": "^2.5.3"
+    "tunnel-agent": "^0.6.0",
+    "typescript": "^2.5.3",
+    "webpack": "^3.6.0"
   }
 }

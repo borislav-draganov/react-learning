@@ -1,8 +1,8 @@
-import {connect} from "react-redux";
-import NoteList from "../components/notes/NoteList";
-import {getNotes} from "../actions/index";
 import * as React from "react";
+import {connect} from "react-redux";
+import {getNotes} from "../actions/index";
 import {Note} from "../models/index";
+import {NoteList} from "../components/notes/NoteList";
 
 interface NotesListContainerProps {
     getNotes: () => any,

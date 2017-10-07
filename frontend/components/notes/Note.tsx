@@ -5,7 +5,7 @@ interface NoteProps {
     note: Note
 }
 
-export default class NoteItem extends React.Component<NoteProps, {}> {
+export class NoteItem extends React.Component<NoteProps, {}> {
     render() {
         return (
             <div>
