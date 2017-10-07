@@ -7,7 +7,7 @@ module.exports = {
         filename: 'bundle.js'
     },
     resolve: {
-        extensions: ['.webpack.js', '.js', '.jsx', '.css', '.html']
+        extensions: ['.webpack.js', '.js', '.jsx', '.css', '.html', '.tsx']
     },
     node: {
         fs: 'empty',
@@ -16,6 +16,11 @@ module.exports = {
     },
     module: {
         loaders: [
+            {
+                test: /(\.ts)|(\.tsx)$/,
+                loader: 'ts-loader',
+                exclude: /node_modules/
+            },
             {
                 test: /(\.js)|(\.jsx)$/,
                 loader: 'babel-loader',

@@ -2,8 +2,14 @@ import {connect} from "react-redux";
 import NoteList from "../components/notes/NoteList";
 import {getNotes} from "../actions/index";
 import * as React from "react";
+import {Note} from "../models/index";
 
-class NotesListContainer extends React.Component {
+interface NotesListContainerProps {
+    getNotes: () => any,
+    notes: Note[]
+}
+
+class NoteListContainer extends React.Component<NotesListContainerProps, {}> {
     componentDidMount() {
         this.props.getNotes();
     }
@@ -26,4 +32,4 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(NotesListContainer);
+)(NoteListContainer);
