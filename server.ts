@@ -1,16 +1,18 @@
-let express = require('express');
-let app = express();
-let notes = require('./data/notes');
+import * as express from 'express'
+import {notes} from "./data/notes";
+import {Request, Response} from "express";
 
-let port = 8080;
+const app = express();
+
+const port = 8080;
 
 app.use(express.static('public'));
 
-app.get('/api/notes', (req, res) => {
+app.get('/api/notes', (req: Request, res: Response) => {
     res.json(notes);
 });
 
-app.get('/api/notes/:id', (req, res) => {
+app.get('/api/notes/:id', (req: Request, res: Response) => {
     let note = notes.find((it) => it.id === parseInt(req.params.id));
 
     if (note) {
@@ -22,7 +24,7 @@ app.get('/api/notes/:id', (req, res) => {
     }
 });
 
-app.use((req, res) => {
+app.use((req: Request, res: Response) => {
     // Use res.sendFile, as it streams instead of reading the file into memory.
     res.sendFile(__dirname + '/public/index.html');
 });

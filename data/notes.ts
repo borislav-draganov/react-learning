@@ -1,6 +1,7 @@
-"use strict";
-exports.__esModule = true;
-exports.notes = [{
+import {Note} from "../frontend/models/index";
+
+export const notes: Note[] = [
+    {
         id: 1,
         text: 'First note'
     },

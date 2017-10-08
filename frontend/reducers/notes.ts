@@ -3,7 +3,7 @@ let defaultState = {
     items: []
 };
 
-export default (state = defaultState, action) => {
+export const notes = (state = defaultState, action) => {
     switch (action.type) {
         case 'NOTES_REQUESTED_DATA':
             return Object.assign({}, state, {

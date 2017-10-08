@@ -1,11 +1,6 @@
 import * as React from 'react';
-import {RouterProps} from "react-router";
 
-interface DormammuProps {
-    match: RouterProps
-}
-
-export class Dormammu extends React.Component<DormammuProps, {}> {
+export class Dormammu extends React.Component<{}, {}> {
     private count: number;
 
     constructor(props) {

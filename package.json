@@ -1,11 +1,13 @@
 {
-  "name": "react-intro",
+  "name": "react-learning",
   "version": "1.0.0",
-  "description": "testing react",
+  "description": "Learning React",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "start:debug": "node --inspect server.js",
+    "start": "npm server-ts && webpack",
+    "server-ts": "node --require ts-node/register server.ts",
+    "server-ts:debug": "node --inspect --require ts-node/register server.ts",
+    "webpack": "webpack",
     "webpack:watch": "webpack -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,7 +15,9 @@
   "license": "MIT",
   "repository": "git@github.com:borislav-draganov/react-learning.git",
   "dependencies": {
-    "express": "^4.16.1"
+    "@types/express": "^4.0.37",
+    "express": "^4.16.1",
+    "ts-node": "^3.3.0"
   },
   "devDependencies": {
     "@types/node": "^8.0.33",
