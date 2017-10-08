@@ -2,13 +2,12 @@
   "name": "react-learning",
   "version": "1.0.0",
   "description": "Learning React",
-  "main": "server.js",
+  "main": "server.ts",
   "scripts": {
-    "start": "npm server-ts && webpack",
-    "server-ts": "node --require ts-node/register server.ts",
-    "server-ts:debug": "node --inspect --require ts-node/register server.ts",
-    "webpack": "webpack",
-    "webpack:watch": "webpack -w",
+    "start": "npm run frontend && npm run server",
+    "server": "node --require ts-node/register server.ts",
+    "frontend": "webpack",
+    "frontend:watch": "webpack -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Borislav Draganov",
@@ -38,7 +37,6 @@
     "request": "^2.83.0",
     "request-promise-native": "^1.0.5",
     "ts-loader": "^2.3.7",
-    "tunnel-agent": "^0.6.0",
     "typescript": "^2.5.3",
     "webpack": "^3.6.0"
   }

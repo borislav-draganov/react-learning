@@ -7,8 +7,9 @@ module.exports = {
         filename: 'bundle.js'
     },
     resolve: {
-        extensions: ['.webpack.js', '.js', '.jsx', '.css', '.html', '.ts', '.tsx']
+        extensions: ['.webpack.js', '.ts', '.tsx', '.js', '.jsx', '.css', '.html']
     },
+    // Needed for request
     node: {
         fs: 'empty',
         net: 'empty',
