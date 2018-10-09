@@ -4,23 +4,24 @@ module.exports = {
     entry: './frontend/index.tsx',
     output: {
         path: path.resolve('public/dist'),
-        filename: 'bundle.js'
+        filename: 'bundle.js',
     },
     resolve: {
-        extensions: ['.webpack.js', '.ts', '.tsx', '.js', '.jsx', '.css', '.html']
+        extensions: ['.webpack.js', '.ts', '.tsx', '.js', '.jsx', '.css', '.html'],
     },
+    mode: "development",
     // Needed for request
     node: {
         fs: 'empty',
         net: 'empty',
-        tls: 'empty'
+        tls: 'empty',
     },
     module: {
-        loaders: [
+        rules: [
             {
                 test: /(\.ts)|(\.tsx)$/,
                 loader: 'ts-loader',
-                exclude: /node_modules/
+                exclude: /node_modules/,
             }
         ]
     }
