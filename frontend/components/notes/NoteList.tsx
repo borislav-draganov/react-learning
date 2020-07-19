@@ -3,10 +3,10 @@ import {Note} from "../../models/index";
 import {NoteItem} from "./Note";
 
 interface NotesListProps {
-    notes: Note[]
+    notes: Note[];
 }
 
-export class NoteList extends React.Component<NotesListProps, {}> {
+export class NoteList extends React.PureComponent<NotesListProps> {
     render() {
         return (
             this.props.notes.map((note, i) =>

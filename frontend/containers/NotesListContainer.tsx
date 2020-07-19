@@ -5,11 +5,11 @@ import {Note} from "../models/index";
 import {NoteList} from "../components/notes/NoteList";
 
 interface NotesListContainerProps {
-    getNotes: () => void,
-    notes: Note[]
+    getNotes: () => void;
+    notes: Array<Note>;
 }
 
-class NoteListContainer extends React.Component<NotesListContainerProps, {}> {
+class NoteListContainer extends React.Component<NotesListContainerProps> {
     componentDidMount() {
         this.props.getNotes();
     }
@@ -22,14 +22,14 @@ class NoteListContainer extends React.Component<NotesListContainerProps, {}> {
 }
 
 const mapStateToProps = (state) => ({
-    notes: state.notes.items
+    notes: state.notes.items,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    getNotes: () => dispatch(getAllNotes())
+    getNotes: () => dispatch(getAllNotes()),
 });
 
 export default connect(
     mapStateToProps,
-    mapDispatchToProps
+    mapDispatchToProps,
 )(NoteListContainer);

@@ -1,6 +1,6 @@
 import {Note} from "../frontend/models/index";
 
-export const notes: Note[] = [
+export const notes: Array<Note> = [
     {
         id: 1,
         text: 'First note'

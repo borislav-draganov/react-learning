@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export class Dormammu extends React.Component<{}, {}> {
+export class Dormammu extends React.PureComponent<{}, {}> {
     private count: number;
 
     constructor(props) {
@@ -19,6 +19,6 @@ export class Dormammu extends React.Component<{}, {}> {
                 </div>);
         }
 
-        return msgs
+        return msgs;
     }
 }

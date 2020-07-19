@@ -2,15 +2,17 @@ import * as React from "react";
 import {Note} from "../../models/index";
 
 interface NoteProps {
-    note: Note
+    note: Note;
 }
 
-export class NoteItem extends React.Component<NoteProps, {}> {
+export class NoteItem extends React.PureComponent<NoteProps> {
     render() {
+        const {note} = this.props;
+
         return (
             <div>
-                <span>ID:</span> {this.props.note.id} <br />
-                <span>Note:</span> {this.props.note.text}
+                <span>ID:</span> {note.id} <br />
+                <span>Note:</span> {note.text}
             </div>
         )
     }
