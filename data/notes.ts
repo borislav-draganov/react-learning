@@ -1,4 +1,4 @@
-import {Note} from "../frontend/models/index";
+import {Note} from "../src/models/index";
 
 export const notes: Array<Note> = [
     {
