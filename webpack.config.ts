@@ -5,6 +5,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import webpack from 'webpack';
 import express from 'express';
+import merge from 'webpack-merge';
 
 const devConfig: webpack.Configuration = {
     mode: 'development',
@@ -79,8 +80,8 @@ const commonConfig: webpack.Configuration = {
     ],
 };
 
-module.exports = (env: any) => {
-    const config = env?.production ? prodConfig : devConfig;
+module.exports = (env: { production: boolean }) => {
+    const envConfig = env?.production ? prodConfig : devConfig;
 
-    return Object.assign({}, config, commonConfig);
+    return merge(commonConfig, envConfig);
 };
