@@ -82,7 +82,7 @@ const commonConfig: webpack.Configuration = {
     ],
 };
 
-module.exports = (env: { production: boolean }) => {
+export default (env: { production: boolean }) => {
     const envConfig = env?.production ? prodConfig : devConfig;
 
     return merge(commonConfig, envConfig);
