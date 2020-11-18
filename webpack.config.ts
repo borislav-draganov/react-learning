@@ -15,15 +15,12 @@ const devConfig: Configuration = {
         historyApiFallback: true,
         before(app: Application) {
             // Add Content-Encoding so that browser can read gzip-ed files
-            app.get(
-                '*.js',
-                (req: Request, res: Response, next: NextFunction) => {
-                    req.url = req.url + '.gz';
-                    res.set('Content-Encoding', 'gzip');
-                    res.set('Content-Type', 'text/javascript');
-                    next();
-                },
-            );
+            app.get('*.js', (req: Request, res: Response, next: NextFunction) => {
+                req.url = req.url + '.gz';
+                res.set('Content-Encoding', 'gzip');
+                res.set('Content-Type', 'text/javascript');
+                next();
+            });
         },
     },
 };
