@@ -32,8 +32,7 @@ const prodConfig: webpack.Configuration = {
     mode: 'production',
     optimization: {
         minimize: true,
-        // TODO: Remove "as any" when @types/terser-webpack-plugin stop using @types/webpack
-        minimizer: [new TerserPlugin() as any],
+        minimizer: [new TerserPlugin()],
     },
 };
 
@@ -77,8 +76,7 @@ const commonConfig: webpack.Configuration = {
         new HtmlWebpackPlugin({
             template: 'src/index.html',
         }),
-        // TODO: Remove "as any" when types are fixed
-        new CompressionPlugin() as any,
+        new CompressionPlugin(),
     ],
 };
 
