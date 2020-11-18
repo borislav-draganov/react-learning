@@ -54,7 +54,7 @@ const commonConfig: Configuration = {
                 loader: 'ts-loader',
             },
             {
-                test: /\.s[ac]ss$/,
+                test: /\.scss$/,
                 use: [
                     'style-loader',
                     {
