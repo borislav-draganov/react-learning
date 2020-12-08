@@ -4,7 +4,7 @@ My personal React playground
 - [x] Redux Toolkit
 - [x] Webpack config in TS
 - [x] CSS Modules
-- [ ] New JSX Transform
+- [x] New JSX Transform
 
 ### Webpack config in TS
 To use Webpack config in TS and have `"module": "esnext"` you need to add in `tsconfig.json`
