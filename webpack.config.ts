@@ -7,13 +7,13 @@ import { Configuration } from 'webpack';
 import { Application, Request, Response, NextFunction } from 'express';
 import merge from 'webpack-merge';
 
-const devConfig: Configuration = {
+const devConfig = {
     mode: 'development',
     devtool: 'source-map',
     devServer: {
-        contentBase: path.join(__dirname, 'dist'),
+        static: path.join(__dirname, 'dist'),
         historyApiFallback: true,
-        before(app: Application) {
+        onBeforeSetupMiddleware({ app }: { app: Application }) {
             // Add Content-Encoding so that browser can read gzip-ed files
             app.get('*.js', (req: Request, res: Response, next: NextFunction) => {
                 req.url = req.url + '.gz';
@@ -23,7 +23,7 @@ const devConfig: Configuration = {
             });
         },
     },
-};
+} as Configuration;
 
 const prodConfig: Configuration = {
     mode: 'production',
