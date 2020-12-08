@@ -1,13 +1,12 @@
-import * as React from 'react';
+import { FC, memo } from 'react';
 import styles from './styles.scss';
-import { memo } from 'react';
 import { Note } from '../../models';
 
 interface NoteProps {
     note: Note;
 }
 
-const NoteComponent: React.FC<NoteProps> = ({ note }: NoteProps) => {
+const NoteComponent: FC<NoteProps> = ({ note }: NoteProps) => {
     return (
         <div className={styles.note}>
             <div>
