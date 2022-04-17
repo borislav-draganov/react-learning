@@ -8,7 +8,7 @@ export const DormammuComponent: FC = () => {
     const [count, setCount] = useState<number>(1);
 
     useEffect(() => {
-        const count = parseInt(params.count, 10);
+        const count = parseInt(params.count ?? '0', 10);
 
         if (!Number.isNaN(count) && count > 0) {
             setCount(count);

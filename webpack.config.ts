@@ -13,7 +13,7 @@ const devConfig = {
     devServer: {
         static: path.join(__dirname, 'dist'),
         historyApiFallback: true,
-        onBeforeSetupMiddleware({ app }: { app: Application }) {
+        setupMiddlewares(middlewares: any[], { app }: { app: Application }) {
             // Add Content-Encoding so that browser can read gzip-ed files
             app.get('*.js', (req: Request, res: Response, next: NextFunction) => {
                 req.url = req.url + '.gz';
@@ -21,6 +21,8 @@ const devConfig = {
                 res.set('Content-Type', 'text/javascript');
                 next();
             });
+
+            return middlewares;
         },
     },
 } as Configuration;
